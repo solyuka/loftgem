@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOFT Premium | Искусство вне времени</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <a href="#home" class="logo">LOFT.</a>
+        <nav>
+            <ul>
+                <li><a href="#home">Философия</a></li>
+                <li><a href="#advantages">Преимущества</a></li>
+                <li><a href="#catalog">Коллекции</a></li>
+            </ul>
+        </nav>
+        <div class="cart-btn" id="openCartBtn">Корзина (<span id="cartCount">0</span>)</div>
+    </header>
+
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-overlay">
+                <h1>Истинный характер вашего дома</h1>
+                <p>Мы не просто создаем мебель. Мы усмиряем металл и раскрываем душу вековых деревьев, превращая
+                    промышленную эстетику в исключительный комфорт для избранных интерьеров.</p>
+            </div>
+        </section>
+
+        <section id="advantages" class="advantages-section">
+            <div class="container">
+                <h2>Почему выбирают LOFT Premium</h2>
+                <p class="section-subtitle">Создавая наследие, а не просто предметы интерьера</p>
+                <div class="adv-grid">
+                    <div class="adv-item">
+                        <h3>Аутентичность материалов</h3>
+                        <p>Мы используем только массив ценных пород, прошедший многоступенчатую сушку, и архитектурную
+                            сталь. Никакого шпона или имитаций — только честная фактура, созданная природой.</p>
+                    </div>
+                    <div class="adv-item">
+                        <h3>Мастерство рук</h3>
+                        <p>Каждый сварочный шов шлифуется вручную, а дерево покрывается натуральными маслами и воском.
+                            Это позволяет сохранить тактильное тепло и уникальный рисунок каждого изделия.</p>
+                    </div>
+                    <div class="adv-item">
+                        <h3>Индивидуальный код</h3>
+                        <p>Ваша мебель будет единственной в своем роде. Мы учитываем мельчайшие нюансы вашего
+                            пространства, адаптируя размеры и отделку под ваш персональный стиль жизни.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="catalog" class="catalog-section">
+            <div class="container">
+                <h2>Наши Коллекции</h2>
+
+                <div class="filter-controls">
+                    <button id="toggleFilterBtn" class="filter-main-btn">Настроить фильтры</button>
+                </div>
+
+                <div id="filterPanel" class="filter-panel">
+                    <div class="filter-group">
+                        <h4>Зона интерьера</h4>
+                        <select id="catFilter">
+                            <option value="all">Все пространства</option>
+                            <option value="living">Гостиная</option>
+                            <option value="bedroom">Спальня</option>
+                            <option value="office">Кабинет</option>
+                            <option value="kitchen">Кухня</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <h4>Материал</h4>
+                        <select id="matFilter">
+                            <option value="all">Любой</option>
+                            <option value="wood">Благородное дерево</option>
+                            <option value="metal">Индустриальный металл</option>
+                            <option value="leather">Премиальная кожа</option>
+                        </select>
+                    </div>
+                    <button id="applyFilters" class="action-btn">Обновить каталог</button>
+                </div>
+
+                <div class="product-grid" id="productGrid">
+                    <div class="product-card" data-id="1" data-name="Стол Iron Oak" data-price="85000"
+                        data-cat="kitchen" data-mat="wood"
+                        data-desc="Обеденный стол из цельного массива дуба с естественным краем. Поверхность обработана немецким маслом, подчеркивающим глубокую текстуру годовых колец."
+                        data-specs="Материалы: Дуб, сталь. Размер: 200х100 см. Цвет: Натуральный дуб.">
+                        
+                        <div class="product-info">
+                            <h3>Стол "Iron Oak"</h3>
+                            <p class="materials">Дуб, вороненая сталь</p>
+                            <p class="price">85 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="2" data-name="Стеллаж Factory" data-price="62000"
+                        data-cat="office" data-mat="metal"
+                        data-desc="Массивный стеллаж, вдохновленный библиотеками старых мануфактур. Сочетает в себе открытость и монументальность."
+                        data-specs="Материалы: Металл, закаленное стекло. Полок: 5. Нагрузка до 150 кг.">
+                        
+                        <div class="product-info">
+                            <h3>Стеллаж "Factory"</h3>
+                            <p class="materials">Металл, стекло</p>
+                            <p class="price">62 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="3" data-name="Кресло Raw" data-price="110000" data-cat="living"
+                        data-mat="leather"
+                        data-desc="Кресло с характером. Натуральная кожа с эффектом старения и стальной каркас создают образ брутального комфорта."
+                        data-specs="Материалы: Кожа Buffalo, сталь. Наполнитель: Многослойный ППУ.">
+                        
+                        <div class="product-info">
+                            <h3>Кресло "Raw"</h3>
+                            <p class="materials">Кожа, сталь</p>
+                            <p class="price">110 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="4" data-name="Кровать Loft Night" data-price="145000"
+                        data-cat="bedroom" data-mat="wood"
+                        data-desc="Минималистичное изголовье из старых амбарных досок и скрытый стальной каркас создают эффект парящей конструкции."
+                        data-specs="Спальное место: 180х200 см. Основание в комплекте.">
+                        
+                        <div class="product-info">
+                            <h3>Кровать "Loft Night"</h3>
+                            <p class="materials">Массив сосны, металл</p>
+                            <p class="price">145 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="5" data-name="Барный стул Bolt" data-price="18000"
+                        data-cat="kitchen" data-mat="metal"
+                        data-desc="Лаконичность и прочность. Стул выполнен из профильной трубы с винтовым механизмом регулировки высоты."
+                        data-specs="Высота: 65-85 см. Сиденье: Сталь/Кожа.">
+                        
+                        <div class="product-info">
+                            <h3>Барный стул "Bolt"</h3>
+                            <p class="materials">Сталь, кожа</p>
+                            <p class="price">18 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="6" data-name="Комод Industrial" data-price="95000"
+                        data-cat="bedroom" data-mat="wood"
+                        data-desc="Система хранения с заклепками и сетчатыми фасадами. Дух индустриальной эпохи в каждой детали фурнитуры."
+                        data-specs="Ящиков: 6. Направляющие скрытого монтажа с доводчиками.">
+                        
+                        <div class="product-info">
+                            <h3>Комод "Industrial"</h3>
+                            <p class="materials">Дерево, чугун</p>
+                            <p class="price">95 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="7" data-name="Лампа Edison" data-price="12000" data-cat="office"
+                        data-mat="metal"
+                        data-desc="Настольный светильник на тяжелом латунном основании. Теплый свет для атмосферных вечеров."
+                        data-specs="Цоколь: E27. Регулировка угла наклона.">
+                        
+                        <div class="product-info">
+                            <h3>Лампа "Edison"</h3>
+                            <p class="materials">Латунь, медь</p>
+                            <p class="price">12 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="8" data-name="Диван Craft" data-price="210000" data-cat="living"
+                        data-mat="leather"
+                        data-desc="Глубокая посадка и безупречная кожаная отделка. Этот диван станет центром притяжения вашей гостиной."
+                        data-specs="Длина: 240 см. Обивка: Кожа высшей категории.">
+                        
+                        <div class="product-info">
+                            <h3>Диван "Craft"</h3>
+                            <p class="materials">Кожа, каркас сталь</p>
+                            <p class="price">210 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="9" data-name="Журнальный стол" data-price="35000"
+                        data-cat="living" data-mat="wood"
+                        data-desc="Уникальный спил карагача с заливкой 'жидким стеклом' в трещинах. Повторение рисунка невозможно."
+                        data-specs="Диаметр: ~60 см. Подстолье: Матовый черный металл.">
+                        
+                        <div class="product-info">
+                            <h3>Журнальный стол</h3>
+                            <p class="materials">Спил карагача</p>
+                            <p class="price">35 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="10" data-name="Тумба TV" data-price="48000" data-cat="living"
+                        data-mat="wood"
+                        data-desc="Сдержанный дизайн и функциональность. Скрытые отверстия для кабелей и сетчатые дверцы для техники."
+                        data-specs="Материал: Старый дуб, сетка. Длина: 160 см.">
+                        
+                        <div class="product-info">
+                            <h3>Тумба TV</h3>
+                            <p class="materials">Металл, дерево</p>
+                            <p class="price">48 000 ₽</p>
+                            <div class="card-btns">
+                                <button class="action-btn buy-btn">В корзину</button>
+                                <button class="action-btn desc-btn">Описание</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="11" data-name="Рабочий стол Pro" data-price="89000"
+                        data-cat="office" data-mat="wood"
+                        data-desc="Профессиональное пространство для творческих личностей. Массивная столешница и встроенный органайзер."
+                        data-specs="Ширина: 150 см. Глубина: 80 см. Материал: Дуб.">
+                        
+                        <div class="product-info">
+                            <h3>Рабочий стол "Pro"</h3>
+                            <p class="materials">Дуб</p>
+                            <p class="price">89 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="12" data-name="Зеркало Pipe" data-price="22000"
+                        data-cat="bedroom" data-mat="metal"
+                        data-desc="Напольное зеркало в раме из водопроводных труб. Смелое решение для современного интерьера."
+                        data-specs="Высота: 180 см. Подсветка опционально.">
+                        
+                        <div class="product-info">
+                            <h3>Зеркало "Pipe"</h3>
+                            <p class="materials">Трубы, стекло</p>
+                            <p class="price">22 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="13" data-name="Полка Solo" data-price="9000" data-cat="office"
+                        data-mat="wood" data-desc="Компактная парящая полка. Минимум деталей, максимум стиля."
+                        data-specs="Длина: 40 см. Нагрузка: 10 кг.">
+                        
+                        <div class="product-info">
+                            <h3>Полка "Solo"</h3>
+                            <p class="materials">Дерево</p>
+                            <p class="price">9 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="14" data-name="Вешалка Loft" data-price="15000"
+                        data-cat="bedroom" data-mat="metal"
+                        data-desc="Настенная вешалка в стиле стимпанк. Надежность на века."
+                        data-specs="Крючков: 5. Материал: Чугун.">
+                        
+                        <div class="product-info">
+                            <h3>Вешалка "Loft"</h3>
+                            <p class="materials">Сталь</p>
+                            <p class="price">15 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="15" data-name="Кресло Chief" data-price="125000"
+                        data-cat="office" data-mat="leather"
+                        data-desc="Кресло руководителя, которое говорит о статусе без лишних слов."
+                        data-specs="Механизм качания. Кожа Madras.">
+                        
+                        <div class="product-info">
+                            <h3>Кресло "Chief"</h3>
+                            <p class="materials">Кожа, дерево</p>
+                            <p class="price">125 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="16" data-name="Кухонный остров" data-price="180000"
+                        data-cat="kitchen" data-mat="wood"
+                        data-desc="Центральный элемент кухни. Бетонная столешница и основание из лиственницы."
+                        data-specs="Вес: 120 кг. Срок изготовления: 30 дней.">
+                        
+                        <div class="product-info">
+                            <h3>Кухонный остров</h3>
+                            <p class="materials">Бетон, дерево</p>
+                            <p class="price">180 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="17" data-name="Стул Nordic" data-price="24000" data-cat="kitchen"
+                        data-mat="wood" data-desc="Лаконичность скандинавского дизайна в лофт-исполнении."
+                        data-specs="Массив ясеня. Скрытый крепеж.">
+                        
+                        <div class="product-info">
+                            <h3>Стул "Nordic"</h3>
+                            <p class="materials">Ясень</p>
+                            <p class="price">24 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="18" data-name="Консоль Edge" data-price="42000" data-cat="living"
+                        data-mat="metal"
+                        data-desc="Узкий столик для прихожей или зоны за диваном. Изящная геометрия металла."
+                        data-specs="Глубина: 30 см. Порошковая покраска.">
+                        
+                        <div class="product-info">
+                            <h3>Консоль "Edge"</h3>
+                            <p class="materials">Металл</p>
+                            <p class="price">42 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="19" data-name="Пуф Cube" data-price="14000" data-cat="living"
+                        data-mat="leather" data-desc="Мягкий куб в грубой коже. Идеальное дополнение к креслу."
+                        data-specs="Размер: 45х45 см. Съемный чехол.">
+                        
+                        <div class="product-info">
+                            <h3>Пуф "Cube"</h3>
+                            <p class="materials">Кожа</p>
+                            <p class="price">14 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                    <div class="product-card" data-id="20" data-name="Шкаф Brutal" data-price="165000"
+                        data-cat="bedroom" data-mat="wood"
+                        data-desc="Масштабная система хранения. Металлические заклепки и состаренное дерево."
+                        data-specs="Длина: 220 см. 4 секции.">
+                        
+                        <div class="product-info">
+                            <h3>Шкаф "Brutal"</h3>
+                            <p class="materials">Металл, дерево</p>
+                            <p class="price">165 000 ₽</p>
+                            <div class="card-btns"><button class="action-btn buy-btn">В корзину</button><button
+                                    class="action-btn desc-btn">Описание</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content product-view">
+            <span class="close-product-modal">&times;</span>
+            <div class="product-detail-grid">
+                <div class="product-images">
+                    <img id="modalImg" src="stol1.png" alt="Gallery">
+                </div>
+                <div class="product-details">
+                    <h2 id="modalTitle"></h2>
+                    <p class="modal-price" id="modalPrice"></p>
+                    <div class="modal-desc-block">
+                        <h4>Философия модели</h4>
+                        <p id="modalDesc"></p>
+                    </div>
+                    <div class="modal-specs">
+                        <h4>Характеристики</h4>
+                        <p id="modalSpecs"></p>
+                    </div>
+                    <button class="submit-btn" id="modalAddToCart">В корзину</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Ваш выбор</h2>
+            <div id="cartItemsList"></div>
+            <div id="cartEmptyState" class="cart-empty">
+                <p>Ваша коллекция пока пуста</p>
+                <button class="action-btn back-to-shop">К покупкам</button>
+            </div>
+            <div id="cartTotal" class="cart-total"></div>
+            <div id="cartActions" class="cart-modal-actions">
+                <button id="checkoutBtn" class="submit-btn">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close-order-modal">&times;</span>
+            <h2>Контактные данные</h2>
+            <form id="orderForm">
+                <input type="text" placeholder="Ваше имя" required>
+                <input type="tel" placeholder="+7 (_) _--" required>
+                <button type="submit" class="submit-btn">Отправить запрос</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 LOFT Premium Furniture. Создано для тех, кто ценит подлинность.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
